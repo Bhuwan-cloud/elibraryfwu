@@ -1,0 +1,52 @@
+<%= form_with(model: document) do |form| %>
+
+        <% if document.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(document.errors.count, "error") %> prohibited this document from being saved:</h2>
+
+            <ul>
+              <% document.errors.each do |error| %>
+                <li><%= error.full_message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+ 
+
+          <%# ------------------bootstrap + rails mixed form ------------------------------------------ %>
+
+          <%# ------------left column----------------------- %>
+          <div class="form-group">
+              <label for="first-name">Title of Document</label><%= form.text_area :title %>
+          </div>
+          <div class="form-group"> <label for="last-name"> Description About Document </label> <%= form.text_area :description , size: "15x8" %> </div >
+          <div class="form-group"> <label for="Mobile-Number">Author </label> <%= form.text_field :author %> </div>
+          
+          <div class="form-group"> <label for="time"> Pdf Link </label> <%= form.text_field :pdf_link %> </div>
+      </div>
+
+          <%# ---------right column( information about the uploader) ------------  %>
+          <div class="col-lg-5 col-md-6 col-sm-12">
+              
+              <label class="my-4 text-danger fs-5"> Uploader's Information </label>
+              <div class="form-group"> <label for="phone" class="text-muted ">Uploader Name </label> <%= form.text_field :uploader_name, required:"true" %> </div>
+              <div class="form-group"> <label for="Evaluate Budget" class="text-muted"> Uploader Email</label> <%= form.text_field :uploader_email %> </div>
+              <div class="form-group"> <label for="Company-Name" class="text-muted">Uploader Phone </label> <%= form.telephone_field :uploader_phone %> </div>
+          
+          </div>
+        </div>
+
+        <%# ---------------------button section -------------------------------------------------- %>
+
+      <div class="row justify-content-center">
+          <div class="col-md-12 col-lg-10 col-12">
+              <div class="mb-2 mt-4">
+                  <div class="text-right"> <%= form.submit "+Add", class:"btn btn-primary btn-block font-weight-bold" %>  </div>
+                  
+              </div>
+          </div>
+      </div>
+      <%# ----------------------------------------------------------------- %>
+
+<% end %>

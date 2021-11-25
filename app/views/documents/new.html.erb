@@ -1,0 +1,35 @@
+
+<%# css imported from asset pipelines for this file --------------------------- %>
+     <%= stylesheet_link_tag 'new_document' %>
+<%# -------------------------------------------------------------------------- %>
+
+<div class="container card-0 justify-content-center ">
+    <div class="card-body px-sm-4 px-0">
+        <div class="row justify-content-center mb-5">
+                <%= link_to documents_path, style:"text-decoration:none" do %>
+                    <i class="fas fa-long-arrow-alt-left fa-2x"> Go Back</i>
+                <% end %>
+            <div class="col-md-10 col">
+                <h3 class="font-weight-bold ml-md-0 mx-auto text-center text-sm-left fs-2"> Add new Document  </h3>
+                <p class="mt-md-4 ml-md-0 ml-2 text-center text-sm-left"> Entrust with heigh professionalism we are offering pixel perfect web and mobile application development third party integration and solution to our.</p>
+            </div>
+        </div>
+        <div class="row justify-content-center round">
+            <div class="col-lg-10 col-md-12 ">
+                <div class="card shadow-lg card-1">
+                    <div class="card-body inner-card">
+                        <div class="row justify-content-center">
+                                    <div class="col-lg-5 col-md-6 col-sm-12">
+                            <%# ---form rendered ---------------- %>
+                            <%= render 'form', document: @document %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<%= link_to 'Back', documents_path %>
+
